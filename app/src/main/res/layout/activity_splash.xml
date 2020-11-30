@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/Raster"
+        android:src="@drawable/homem_aranha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,10 +22,10 @@
         android:id="@+id/imageView2"
         android:layout_width="194dp"
         android:layout_height="342dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="508dp"
         android:src="@drawable/marvel_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
