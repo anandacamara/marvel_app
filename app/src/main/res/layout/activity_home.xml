@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
-        tools:listitem="@layout/ic_quadrinhos_capa"
+        tools:listitem="@layout/item_quadrinhos_capa"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
 </LinearLayout>
