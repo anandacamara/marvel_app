@@ -1,14 +1,16 @@
 package com.example.marvelapp.model
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.marvelapp.R
 
-class QuadrinhoAdapter(val listener: OnClickQuadrinho): RecyclerView.Adapter<QuadrinhoAdapter.QuadrinhoViewHolder>() {
+class QuadrinhoAdapter(val listener: OnClickQuadrinho, val context: Context): RecyclerView.Adapter<QuadrinhoAdapter.QuadrinhoViewHolder>() {
     val listQuadrinhos = ArrayList<Quadrinho>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuadrinhoViewHolder {
@@ -19,8 +21,14 @@ class QuadrinhoAdapter(val listener: OnClickQuadrinho): RecyclerView.Adapter<Qua
     override fun getItemCount(): Int = listQuadrinhos.size
 
     override fun onBindViewHolder(holder: QuadrinhoViewHolder, position: Int) {
-        var aluno = listQuadrinhos[position]
-        holder.numero.text = aluno.numero.toString()
+        var quadrinho = listQuadrinhos[position]
+        holder.numero.text = quadrinho.numero.toString()
+
+        Glide
+            .with(context)
+            .load(quadrinho.image)
+            .centerCrop()
+            .into(holder.imagem)
     }
 
     fun addQuadrinhos(list: ArrayList<Quadrinho>){
