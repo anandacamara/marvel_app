@@ -34,7 +34,6 @@ class LoginActivity : AppCompatActivity() {
             }
             }
         }
-
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
