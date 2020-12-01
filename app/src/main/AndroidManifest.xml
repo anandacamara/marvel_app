@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarvelAPP">
         <activity android:name=".UI.DescricaoActivity"></activity>
+        <activity android:name=".UI.HomeActivity"></activity>
         <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
