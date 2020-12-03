@@ -22,7 +22,7 @@ class QuadrinhoAdapter(val listener: OnClickQuadrinho, val context: Context): Re
 
     override fun onBindViewHolder(holder: QuadrinhoViewHolder, position: Int) {
         var quadrinho = listQuadrinhos[position]
-        holder.numero.text = quadrinho.numero.toString()
+        holder.numero.text = quadrinho.issueNumber.toString()
 
         Glide
             .with(context)
