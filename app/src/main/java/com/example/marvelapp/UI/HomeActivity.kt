@@ -1,5 +1,6 @@
 package com.example.marvelapp.UI
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -36,30 +37,33 @@ class HomeActivity : AppCompatActivity(), QuadrinhoAdapter.OnClickQuadrinho {
         rv_capas_quadrinhos.layoutManager = gridLayoutManager
         rv_capas_quadrinhos.hasFixedSize()
 
-        viewModel.listResults.observe(this) {
-            quadrinhoAdapter.addQuadrinhos(it)
-        }
-
         viewModel.popListResult()
+
+        viewModel.listResults.observe(this) {
+            quadrinhoAdapter.addQuadrinhos(it.data.results)
+        }
 
         setScroller()
     }
 
     fun setScroller(){
         rv_capas_quadrinhos.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                if(dy > 0){
-                    val litem = gridLayoutManager.itemCount
-                    val vItem  = gridLayoutManager.findFirstCompletelyVisibleItemPosition()
-                    val itens = quadrinhoAdapter.itemCount
-                }
-            }
         })
     }
 
     override fun onClickQuadrinho(position: Int) {
-        TODO("Not yet implemented")
-    }
+        val quadrinho = quadrinhoAdapter.listQuadrinhos[position]
+        val url = "${quadrinho.thumbnail?.path}.${quadrinho.thumbnail?.extension}"
 
+        startActivity(
+            Intent(this, DescricaoActivity::class.java).apply {
+                putExtra("url_image", url)
+                putExtra("titulo", quadrinho.title)
+                putExtra("descricao", quadrinho.description)
+                putExtra("data", quadrinho.modified)
+                putExtra("preco", quadrinho.price.toString())
+                putExtra("paginas", quadrinho.pageCount.toString())
+            }
+        )
+    }
 }

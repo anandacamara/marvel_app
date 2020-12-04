@@ -1,5 +1,6 @@
 package com.example.marvelapp.service
 
+import com.example.marvelapp.model.Quadrinho
 import com.example.marvelapp.model.QuadrinhoRes
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,6 +11,7 @@ interface Repository{
 
     @GET("characters/1009610/comics")
     suspend fun getResults(
+        @Query("offset")p0: Int,
         @Query("format")p1: String,
         @Query("formatType")p2: String,
         @Query("orderBy")p3: String,
