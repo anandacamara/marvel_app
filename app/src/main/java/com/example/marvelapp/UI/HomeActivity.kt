@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapp.R
 import com.example.marvelapp.model.QuadrinhoAdapter
@@ -42,7 +41,6 @@ class HomeActivity : AppCompatActivity(), QuadrinhoAdapter.OnClickQuadrinho {
         viewModel.listResults.observe(this) {
             quadrinhoAdapter.addQuadrinhos(it.data.results)
         }
-
         setScroller()
     }
 
@@ -53,11 +51,10 @@ class HomeActivity : AppCompatActivity(), QuadrinhoAdapter.OnClickQuadrinho {
 
     override fun onClickQuadrinho(position: Int) {
         val quadrinho = quadrinhoAdapter.listQuadrinhos[position]
-        val url = "${quadrinho.thumbnail?.path}.${quadrinho.thumbnail?.extension}"
 
         startActivity(
             Intent(this, DescricaoActivity::class.java).apply {
-                putExtra("url_image", url)
+                putExtra("url_image", quadrinho.thumbnail.getURL())
                 putExtra("titulo", quadrinho.title)
                 putExtra("descricao", quadrinho.description)
                 putExtra("data", quadrinho.modified)

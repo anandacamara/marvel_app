@@ -1,16 +1,13 @@
 package com.example.marvelapp.model
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.marvelapp.R
 import com.example.marvelapp.UI.HomeActivity
-import com.google.gson.JsonArray
 import com.squareup.picasso.Picasso
 
 class QuadrinhoAdapter(val listener: OnClickQuadrinho, val context: HomeActivity): RecyclerView.Adapter<QuadrinhoAdapter.QuadrinhoViewHolder>() {
@@ -27,14 +24,7 @@ class QuadrinhoAdapter(val listener: OnClickQuadrinho, val context: HomeActivity
         var quadrinho = listQuadrinhos[position]
         holder.numero.text = "#${quadrinho.issueNumber}"
 
-        val url = "${quadrinho.thumbnail?.path}.${quadrinho.thumbnail?.extension}"
-
-        Picasso.with(context).load("http://i.annihil.us/u/prod/marvel/i/mg/9/d0/5ae9bb4996a61.jpg").into(holder.imagem)
-
-//        Glide
-//            .with(context)
-//            .load("http://i.annihil.us/u/prod/marvel/i/mg/9/d0/57b36fddc0776.jpg")
-//            .into(holder.imagem)
+        Picasso.with(context).load(quadrinho.thumbnail.getURL()).into(holder.imagem)
     }
 
     fun addQuadrinhos(list: ArrayList<Quadrinho>){

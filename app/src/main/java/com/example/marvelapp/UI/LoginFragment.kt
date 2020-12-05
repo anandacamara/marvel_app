@@ -26,8 +26,4 @@ class LoginFragment : Fragment() {
         }
         return view
     }
-
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
 }

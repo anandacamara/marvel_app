@@ -20,29 +20,20 @@ class DescricaoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descricao)
 
-        val titulo = intent.getStringExtra("titulo")
-        val descricao = intent.getStringExtra("descricao")
-        val data = intent.getStringExtra("data")
-        val preco = intent.getStringExtra("preco")
-        val paginas = intent.getStringExtra("paginas")
         val url_image = intent.getStringExtra("url_image")
 
         iv_capa.setOnClickListener { onClickCapa(url_image) }
 
-        toolbar_descricao_activity.setNavigationOnClickListener {
-            onBackPressed()
-        }
-
-      //  val imageView: ImageView = findViewById(R.id.iv_capa_extendida)
+        toolbar_descricao_activity.setNavigationOnClickListener { onBackPressed() }
 
         Picasso.with(this).load(url_image).into(iv_fundo_quadrinho)
         Picasso.with(this).load(url_image).into(iv_capa)
-        //Picasso.with(this).load(url_image).into(imageView)
-        tv_titulo.text = titulo
-        tv_descricao.text = descricao
-        data_publicacao.text = data
-        tv_preco.text = preco
-        tv_pages.text = paginas
+
+        tv_titulo.text = intent.getStringExtra("titulo")
+        tv_descricao.text = intent.getStringExtra("descricao")
+        data_publicacao.text = intent.getStringExtra("data")
+        tv_preco.text = intent.getStringExtra("preco")
+        tv_pages.text = intent.getStringExtra("paginas")
     }
 
      fun onClickCapa(url: String?) {
@@ -59,7 +50,7 @@ class DescricaoActivity : AppCompatActivity() {
                 .setBackground(
                     ContextCompat.getColor(this, android.R.color.transparent).toDrawable()
                 )
-                .setView(R.layout.layout_capa)
+                .setView(view)
                 .show()
         }
     }

@@ -1,6 +1,5 @@
 package com.example.marvelapp.service
 
-import com.example.marvelapp.model.Quadrinho
 import com.example.marvelapp.model.QuadrinhoRes
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
