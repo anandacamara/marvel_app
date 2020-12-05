@@ -12,14 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="300dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center">
+
         <ImageView
             android:id="@+id/iv_fundo_quadrinho"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="600dp"
+            android:scaleType="fitXY"
             app:layout_constraintVertical_bias="0.0" />
 
+        </LinearLayout>
+
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_login_activity"
+            android:id="@+id/toolbar_descricao_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ToolbarColoredBackArrow"
@@ -29,9 +37,12 @@
         <ImageView
             android:id="@+id/iv_capa"
             android:layout_width="120dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="140dp" />
+            android:layout_height="190dp"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp" />
 
     </FrameLayout>
 
@@ -45,8 +56,9 @@
             android:id="@+id/tv_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/white"
+            android:fontFamily="sans-serif-condensed"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -67,7 +79,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
                 android:text="Published:"
                 android:textColor="@color/white"
                 android:textSize="15dp"
@@ -87,12 +98,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
                 android:text="Preco:"
                 android:textColor="@color/white"
                 android:textSize="15dp"
@@ -117,7 +128,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
                 android:text="Pages:"
                 android:textColor="@color/white"
                 android:textSize="15dp"

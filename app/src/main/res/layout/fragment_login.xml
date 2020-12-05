@@ -40,6 +40,7 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
+                        android:keepScreenOn="true"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
                         app:boxBackgroundColor="@color/white">
@@ -54,6 +55,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:keyboardNavigationCluster="true"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="10dp"
                         app:boxBackgroundColor="@color/white">

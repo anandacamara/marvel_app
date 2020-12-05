@@ -1,5 +1,6 @@
 package com.example.marvelapp.UI
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,10 +20,10 @@ class LoginFragment : Fragment() {
         view.buton_cadastro.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_cadastroFragment)
         }
-        return view
-    }
 
-    companion object {
-        fun newInstance() = LoginFragment()
+        view.button_login.setOnClickListener {
+            startActivity(Intent(this.context, HomeActivity::class.java))
+        }
+        return view
     }
 }
