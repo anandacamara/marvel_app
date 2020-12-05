@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         }, 1000)
     }
 
-    fun callActivityLogin(){
+    private fun callActivityLogin(){
         startActivity(Intent(this, LoginActivity::class.java))
     }
 }

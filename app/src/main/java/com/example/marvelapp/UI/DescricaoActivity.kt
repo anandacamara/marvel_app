@@ -36,7 +36,7 @@ class DescricaoActivity : AppCompatActivity() {
         tv_pages.text = intent.getStringExtra("paginas")
     }
 
-     fun onClickCapa(url: String?) {
+     private fun onClickCapa(url: String?) {
          val li: LayoutInflater = this.layoutInflater
          val view: View = li.inflate(R.layout.layout_capa, null)
          Picasso.with(this).load(url).into(view.iv_capa_extendida)
