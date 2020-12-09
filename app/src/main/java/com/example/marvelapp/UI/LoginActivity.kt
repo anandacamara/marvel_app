@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar_login_activity)
 
-        navController = findNavController(R.id.fl_login)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+            navController = findNavController(R.id.fl_login)
+            appBarConfiguration = AppBarConfiguration(navController.graph)
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
